@@ -20,7 +20,7 @@ else:
 #############################################################################################
 
 #Evaluacion3
-response = requests.get("http://192.168.100.60")
+response = requests.get(url)
 if (response.status_code == 200):
     print("solicitud exitosa!")
 
