@@ -8,24 +8,24 @@ url = "https://192.168.100.60"
 
 
 r = requests.get(url+"/rest/ip/address/*2", auth=(conf.user,conf.clave), verify=False)
-#print(json.dumps(r.json(), indent=4))
+print(json.dumps(r.json(), indent=4))
 
 
-#r2 = requests.get(url+"/rest/interface/ether1", auth=(conf.user,conf.clave), verify=False)
-#if r2.json()["mac-address"] == "00:0C:29:B6:9C:47":
-    #print("El equipo no fue cambiado")
-#else:
-    #print("Alguien cambio el equipo")
+r2 = requests.get(url+"/rest/interface/ether1", auth=(conf.user,conf.clave), verify=False)
+if r2.json()["mac-address"] == "00:0C:29:B6:9C:47":
+    print("El equipo no fue cambiado")
+else:
+    print("Alguien cambio el equipo")
 
 #############################################################################################
 
 #Evaluacion3
-#response = requests.get("http://192.168.100.60")
-#if (response.status_code == 200):
-    #print("solicitud exitosa!")
+response = requests.get("http://192.168.100.60")
+if (response.status_code == 200):
+    print("solicitud exitosa!")
 
-#elif (response.status_code == 404):
-    #print("Soliocitud Fallida!")
+elif (response.status_code == 404):
+    print("Soliocitud Fallida!")
 
 #############################################################################################
 
